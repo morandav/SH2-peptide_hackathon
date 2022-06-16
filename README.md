@@ -1,12 +1,12 @@
 # SH2-peptide_hackathon
-3D protein structure course hackathon.
-User manual
 
-Program overview:
-This project predicts SH2 domain and peptide structure using neural network.
+<h1>User manual</h1>
 
-Data Processing
-Steps:
+<h2>Description:</h2>
+3D protein structure course hackathon. This project predicts SH2 domain and peptide structure using neural network.
+
+<h2>Data Processing</h2>
+<h3>Steps:</h3>
 Download pdb files - 
 extract pdb files according to the experimental method: Xray and NMR
 Choose a pdb file with a good resolution SH2 chain and peptide to be determined as the reference structures.
@@ -15,7 +15,7 @@ Split each pdb file to multiple pdb files containing one chain using extract_cha
 
 Process the data and filter the pdb files to obtain the ones that contain a good resolution SH2 chain and peptide, using process_data.py.
 
-Setup :
+<h3>Setup:</h3>
 This setup is made and tested for linux with bash or sh as the running shell.
 In order to use the data processing program, follow these setup steps:
 Download files:  
@@ -31,27 +31,29 @@ The pdb data should be in the next format:
 inside the pdb data directory there should be other directories (NMR / Xray) 
  inside each directory add the file alignMPtrans.pl and a directory for each pdb file  
 inside the pdb file directory add the relevant pdb file, and a new pdb file for each chain of protein. 
-Input  :
+
+ <h3>Input: </h3>
 Run command: 
 Python process_data.py < path to pdb data directory> 
 
-Output : 
+<h3>Output: </h3>
 Inside the pdb data directory a new directory called actual_data contains a directory for each pdb file. Inside each one of these directories there will be a pdb of the peptide and a pdb of the SH2 chain. 
 
 
-Program overview
+<h3>Program overview</h3>
 The program filters the pdb files to obtain the ones that contain a good resolution SH2 chain and peptide. SH2_REF_PATH represents the SH2 pdb file with a good resolution which is used as the reference. The program goes over all the chains in each pdb, alignes them to the reference SH2, and identifies the specific chain that has the most atoms aligned with the reference. The program then applies the relevant transformation to the whole pdb file, and searches for the matching peptide. This was done by finding the closest chain to the reference peptide. Only pdf files that contain a SH2 chain and a matching peptide, according to the filtering process explained, were added to the data set.
 
 
 
 Extract_chains.py - 
 This script creates specific pdb files for each chain, using /cs/staff/dina/scripts/extractChains.pl  script. Each pdb file is created inside a directory named pdb_id, the original pdb file containing all chains was also moved inside this directory.
-SH2 and peptide neural network modeling
-Steps :
+ 
+ <h2>SH2 and peptide neural network modeling</h2>
+<h3>Steps :</h3>
 utils.ipynb script: creates input and labels to SH2 and peptide neural network
 net.ipynb script: create a new network / use the saved model. 
 The predicted structures are saved as pdb files splitted to to different directories according to the original pdb name.
-Setup :
+<h3>Setup :</h3>
 In order to create SH2 and peptide neural network model
 and predict with it, follow these setup steps:
 In utils.ipynb: 
@@ -68,9 +70,9 @@ If you want to use exist model: update  <ckpt_path> to the path of the model
 Update <save_path> to where you want to save pdb predictions
 Run the script
 
-Output : 
+<h3>Output : </h3>
 Trained model check point
 Pdb files of the model predictions
 
-Program overview:
+ <h3>Program overview:</h3>
 ?????????????
