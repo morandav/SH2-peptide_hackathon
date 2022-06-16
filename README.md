@@ -1,5 +1,3 @@
-# SH2-peptide_hackathon
-
 <h1>User manual</h1>
 
 <h2>Description:</h2>
