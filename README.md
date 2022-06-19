@@ -54,18 +54,18 @@ The program filters the pdb files to obtain the ones that contain a good resolut
 In order to create SH2 and peptide neural network model
 and predict with it, follow these setup steps: <br>
 * In utils.ipynb: <br> 
-<t>1. Update <data_path> to the path actual_data directory you have created in the previous step (Data Processing). <br>
-If you did not follow the Data Processing steps, you need to give a path which is a path to a directory. In the directory there are several directories, representing different pdbs, contains:<br>
-pdb-name_SH2_<chain_id>.pdb 	pdb-name_peptide_<chain_id>.pdb<br>
-<t>2. Update <save_path> to path to where you want to save the data you need for the network train and validation <br>
-<t>3. Run the script <br>
+    1. Update <data_path> to the path actual_data directory you have created in the previous step (Data     Processing). <br>
+    If you did not follow the Data Processing steps, you need to give a path which is a path to a       directory. In the directory there are several directories, representing different pdbs, contains:<br>
+    pdb-name_SH2_<chain_id>.pdb 	pdb-name_peptide_<chain_id>.pdb<br>
+    2. Update <save_path> to path to where you want to save the data you need for the network train and validation <br>
+    3. Run the script <br>
 * In net.ipynb: <br>
-1. Optional: update models’ parameters in the parameters section <br>
-2. Update <data_path> to to <save_path> you chose in utils script <br>
-3. If you create a new model: update <ckpt_best_path> to the path to where you want to save your best ckpt <br>
-4.If you want to use exist model: update  <ckpt_path> to the path of the model <br>
-5. Update <save_path> to where you want to save pdb predictions <br>
-6. Run the script<br>
+    1. Optional: update models’ parameters in the parameters section <br>
+    2. Update <data_path> to to <save_path> you chose in utils script <br>
+    3. If you create a new model: update <ckpt_best_path> to the path to where you want to save your best ckpt <br>
+    4.If you want to use exist model: update  <ckpt_path> to the path of the model <br>
+    5. Update <save_path> to where you want to save pdb predictions <br>
+    6. Run the script<br>
 
 <h3>Input : </h3>
  The input of the neural network is a one-hot encoding matrix of the sequences of the SH2 and peptide, and another 2 columns representing whether the amino acid belongs to the SH2 domain or peptide.
